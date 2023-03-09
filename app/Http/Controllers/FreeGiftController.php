@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\FreeGift;
 
+
 class FreeGiftController extends Controller
 {
     protected $freeGift;
@@ -70,4 +71,5 @@ class FreeGiftController extends Controller
         return redirect()->route('free-gifts.index')
             ->with('success', 'Free gift deleted successfully');
     }
+    
 }
