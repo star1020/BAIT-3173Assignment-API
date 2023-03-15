@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('free_gifts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('gift_name');
-            $table->string('gift_desc');
-            $table->string('gift_image');
-            $table->string('gift_required_price');
-            $table->int('deleted');
+            $table->string('giftName');
+            $table->string('giftDesc');
+            $table->string('giftRequiredPrice');
+            $table->integer('qty');
+            $table->string('image');
+            $table->integer('deleted');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('free_gifts');
+        Schema::dropIfExists('free_gift');
     }
 };
