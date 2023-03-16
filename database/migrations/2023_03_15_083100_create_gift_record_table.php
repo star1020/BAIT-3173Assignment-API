@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('free_gifts', function (Blueprint $table) {
+        Schema::create('gift_record', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('giftName');
-            $table->string('giftDesc');
-            $table->string('giftRequiredPrice');
-            $table->integer('qty');
-            $table->string('image')->nullable();
+            $table->integer('paymentId');
+            $table->string('giftId');
             $table->integer('deleted');
             $table->timestamps();
         });
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('free_gift');
+        Schema::dropIfExists('gift_record');
     }
 };
