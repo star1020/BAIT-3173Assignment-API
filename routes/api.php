@@ -3,16 +3,16 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FreeGiftController;
+use App\Http\Controllers\GiftRecordController;
 
 Route::resource('free-gifts', FreeGiftController::class);
+Route::resource('gift-records', GiftRecordController::class);
+Route::put('free-gifts/decrease/{id}', [FreeGiftController::class, 'decrease']);
+Route::put('free-gifts/increase/{id}', [FreeGiftController::class, 'increase']);
+Route::get('gift-records/checkPaymentId/{paymentId}', [GiftRecordController::class, 'checkPaymentId']);
 
 
 
-// Route::get('data', function () {
-//     return response()->json([
-//         $data = ['foo', 'bar', 'baz'],
-//     ]);
-// });
 /*
 |--------------------------------------------------------------------------
 | API Routes

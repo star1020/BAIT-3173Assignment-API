@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('gift_record', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('paymentId');
-            $table->string('giftId');
+            $table->string('giftId')->nullable();
             $table->integer('deleted');
             $table->timestamps();
         });

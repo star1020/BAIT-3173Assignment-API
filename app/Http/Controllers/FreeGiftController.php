@@ -92,12 +92,29 @@ class FreeGiftController extends Controller
     public function destroy($id)
     {
         try {
-            $freeGift = $this->freeGiftBuilder->readById($id)
-            ->setDeleted(1)
-            ->save();
+            $freeGift = $this->freeGiftBuilder->delete($id);
             return response()->json(['free_gift' => $freeGift], 200);
         } catch (\Exception $e) {
             // Handle the exception here, such as logging it or returning an error response
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+    public function decrease($id)
+    {
+        try {
+            $freeGift = $this->freeGiftBuilder->decrease($id);
+            return response()->json(['message' => 'Free gifts updated successfully'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    public function increase($id)
+    {
+        try {
+            $freeGift = $this->freeGiftBuilder->increase($id);
+            return response()->json(['message' => 'Free gifts updated successfully'], 200);
+        } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }

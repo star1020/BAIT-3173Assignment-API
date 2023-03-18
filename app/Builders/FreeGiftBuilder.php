@@ -34,10 +34,23 @@ class FreeGiftBuilder
         return $this;
     }
 
-    public function delete()
+    public function delete($id)
     {
         $freeGift = freeGift::findOrFail($id);
         $freeGift->deleted = 1;
+        $freeGift->update();
+    }
+
+    public function decrease($id)
+    {
+        $freeGift = freeGift::findOrFail($id);
+        $freeGift->qty -= 1;
+        $freeGift->update();
+    }
+    public function increase($id)
+    {
+        $freeGift = freeGift::findOrFail($id);
+        $freeGift->qty += 1;
         $freeGift->update();
     }
 
