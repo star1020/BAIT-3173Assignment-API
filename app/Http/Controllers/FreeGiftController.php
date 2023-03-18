@@ -52,17 +52,13 @@ class FreeGiftController extends Controller
 
     public function show($id)
     {
-        try {
+        
             $freeGift = $this->freeGiftBuilder->readById($id);
             if ($freeGift) {
                 return response()->json(['free_gift' => $freeGift], 200);
             } else {
-                return response()->json(['error' => 'Free gift not found'], 404);
+                return null;
             }
-        } catch (\Exception $e) {
-            // Handle the exception here, such as logging it or returning an error response
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
     }
     public function update($id, Request $request)
     {

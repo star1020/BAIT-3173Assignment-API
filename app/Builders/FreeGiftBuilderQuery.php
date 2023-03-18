@@ -18,7 +18,11 @@ class FreeGiftBuilderQuery
     }
     public function findOrFail($id)
     {
-        return $this->query->findOrFail($id);
+        $model= $this->query->find($id);
+        if($model){
+            return $model;
+        }
+        return null;
     }
 
     public function create()

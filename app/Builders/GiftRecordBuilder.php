@@ -34,7 +34,7 @@ class GiftRecordBuilder
         return $this;
     }
 
-    public function delete()
+    public function delete($id)
     {
         $giftRecord = GiftRecord::findOrFail($id);
         $giftRecord->deleted = 1;

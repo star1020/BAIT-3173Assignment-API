@@ -54,7 +54,7 @@ class GiftRecordController extends Controller
             if ($giftRecord) {
                 return response()->json(['gift_record' => $giftRecord], 200);
             } else {
-                return response()->json(['error' => 'Free gift not found'], 404);
+                return response()->json(['error' => 'Gift Record not found'], 404);
             }
         } catch (\Exception $e) {
             // Handle the exception here, such as logging it or returning an error response
@@ -94,7 +94,9 @@ class GiftRecordController extends Controller
         $countGiftRecord = GiftRecord::where('paymentId', $paymentId)->count();
         if ($giftRecord && $countGiftRecord==1) {
             return response()->json(['gift_record' => $giftRecord], 200);
-        } else {
+        } else if($giftRecord && $countGiftRecord>1){
+            return response()->json(['gift_record' => $giftRecord], 404);
+        }else {
             return null;
         }
     }
