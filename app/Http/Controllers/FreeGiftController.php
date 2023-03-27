@@ -22,10 +22,6 @@ class FreeGiftController extends Controller
         return response()->json(compact('freeGifts'), 200);
     }
 
-    public function create()
-    {
-        return view('free-gifts.create');
-    }
 
     public function store(Request $request)
 {

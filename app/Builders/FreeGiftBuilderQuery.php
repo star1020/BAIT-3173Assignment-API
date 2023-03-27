@@ -3,7 +3,7 @@ namespace App\Builders;
 
 use App\Models\FreeGift;
 
-class FreeGiftBuilderQuery
+class FreeGiftBuilderQuery implements FreeGiftBuilderQueryInterface
 {
     protected $query;
 

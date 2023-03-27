@@ -4,7 +4,7 @@ namespace App\Builders;
 
 use App\Models\GiftRecord;
 
-class GiftRecordBuilder
+class GiftRecordBuilder implements GiftRecordBuilderInterface
 {
     protected $query;
 

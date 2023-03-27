@@ -22,11 +22,6 @@ class GiftRecordController extends Controller
         return response()->json(compact('giftRecords'), 200);
     }
 
-    public function create()
-    {
-        return view('gift-records.create');
-    }
-
     public function store(Request $request)
     {
         try {

@@ -3,7 +3,7 @@ namespace App\Builders;
 
 use App\Models\GiftRecord;
 
-class GiftRecordBuilderQuery
+class GiftRecordBuilderQuery implements GiftRecordBuilderQueryInterface
 {
     protected $query;
 
