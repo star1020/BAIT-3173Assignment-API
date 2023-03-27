@@ -1,6 +1,6 @@
 <?php 
 namespace App\Builders;
-
+use App\Builders\Interfaces\FreeGiftBuilderQueryInterface;
 use App\Models\FreeGift;
 
 class FreeGiftBuilderQuery implements FreeGiftBuilderQueryInterface

@@ -1,6 +1,6 @@
 <?php 
 namespace App\Builders;
-
+use App\Builders\Interfaces\GiftRecordBuilderQueryInterface;
 use App\Models\GiftRecord;
 
 class GiftRecordBuilderQuery implements GiftRecordBuilderQueryInterface

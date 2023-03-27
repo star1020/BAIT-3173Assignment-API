@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Builders;
-
+namespace App\Builders\Interfaces;
 interface FreeGiftBuilderInterface
 {
     public function get();

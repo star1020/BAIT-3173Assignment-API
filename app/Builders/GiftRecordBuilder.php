@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Builders;
-
+use App\Builders\Interfaces\GiftRecordBuilderInterface;
 use App\Models\GiftRecord;
 
 class GiftRecordBuilder implements GiftRecordBuilderInterface

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Builders;
-
+use App\Builders\Interfaces\FreeGiftBuilderInterface;
 use App\Models\FreeGift;
 
 class FreeGiftBuilder implements FreeGiftBuilderInterface
