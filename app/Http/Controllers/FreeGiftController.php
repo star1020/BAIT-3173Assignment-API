@@ -60,11 +60,8 @@ class FreeGiftController extends Controller
     {
         try {
             $freeGift = $this->freeGiftBuilder->readById($id)
-                ->setGiftName($request->giftName)
-                ->setGiftDesc($request->giftDesc)
                 ->setGiftRequiredPrice($request->giftRequiredPrice)
                 ->setQty($request->qty)
-                ->setDeleted($request->deleted)
                 ->save();
 
             if ($request->giftImages != null) {
