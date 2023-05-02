@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FreeGiftController;
 use App\Http\Controllers\GiftRecordController;
 use App\Http\Controllers\MembershipController;
+use App\Http\Controllers\CardInfoController;
 
 Route::resource('memberships', MembershipController::class);
+Route::resource('card_info', CardInfoController::class);
 Route::resource('free-gifts', FreeGiftController::class);
 Route::resource('gift-records', GiftRecordController::class);
 Route::put('free-gifts/decrease/{id}', [FreeGiftController::class, 'decrease']);
